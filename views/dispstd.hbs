@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+{{#each users}}
+<head>
+	<title>{{firstName}}</title>
+	<style type="text/css">
+		.box{
+			border:2px solid black;
+			width: 50%;
+			padding: 10px;
+		}
+	</style>
+</head>
+<body>
+
+	
+	<br>
+	<img src="{{image}}" height="200px" width="200px">
+	<hr>
+	<ul style="list-style: none;">
+		<li>Student Name:{{firstName}} {{lastName}}</li>
+		<li>Mobile Number:{{mobileNumber}}</li>
+		<li>Age:{{age}}</li>
+		<li>Login Credential:{{emailAddress}}</li>
+		<li>Gender:{{gender}}</li>
+		<li>Address:{{address}}</li>
+
+	</ul>
+	
+	<br>
+<div>
+	<h2>Update Student</h2>
+	<div class="box">
+	<form method="post" action="/update/{{_id}}">
+		<label>Student's firstname:</label><input type="text" name="fname" value="{{firstName}}">
+		<label>Student's lastname:</label><input type="text" name="lname" value="{{lastName}}"><br><br>
+		<label>Mobile Number:</label><input type="text" name="phn" value="{{mobileNumber}}"><br><br>
+		<label>Age:</label><input type="text" name="age" value="{{age}}"><br><br>
+		<label>Address:</label><textarea type="text" name="add" value="{{address}}"></textarea><br>
+
+		<button>Update</button>
+	</form>
+</div>
+</div> 
+</body>
+ {{/each}}
+</html>

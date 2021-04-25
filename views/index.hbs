@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Home Page</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css">
+<script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/index.css">
+<script type="text/javascript" src="js/index.js"></script>
+</head>
+<body>
+
+
+
+<nav class="navbar navbar-expand-custom navbar-mainbg">
+       <i class="fas fa-user-graduate" style="color: white; padding-left: 10%;"></i>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars text-white"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#"><i class="fas fa-tachometer-alt"></i>Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="	far fa-address-card"></i>Know Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/sign"><i class="	fas fa-graduation-cap"></i>Admissions</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/logint"><i class="	fas fa-book-reader"></i>Academics</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="far fa-chart-bar"></i>School Life</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/login"><i class="far fa-copy"></i>Studies</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="/regi"><i class="fas fa-sign-in-alt"></i>Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/log"><i class="fa fa-id-badge" aria-hidden="true"></i>Login</a>
+                </li>
+           
+             
+            </ul>
+        </div>
+    </nav>
+
+
+
+    <br> <br><br> <br>
+<div align="center">
+    <img src="logo.jpg" width="300px" height="300px">
+    <br> 
+    <h1 style="margin-top: 20px; font-family: serif; font-size: 80px;">Aman International School</h1>
+    <h4 style="font-style: italic; color: red; font-family: serif;">(where ASPIRATION meets SUCCESS)</h4>
+</div>
+<br><br>
+
+<marquee  scrollamount="10" behavior="alternate"><h2  style="color: magenta;font-family: serif; font-weight: 900">WELCOMES YOU</h2></marquee>
+
+<br> <br> <br>
+<div align="center" class="img">
+<img name="aman" style="width: 100%; height: 700px">
+</div>
+
+<br> <br> <br>
+
+<marquee scrollamount="10" behavior="alternate"><a href="/sign" style="text-decoration: none;"><font size="6"color="lawngreen"><h2>Admissions open</h2></font></a></marquee><br> <br>
+
+<div class="box1">
+    <p>
+    	This is <span style="color: red"><strong>Aman Somani</strong></span> ,founder and principal of<span style="color: blue;font-weight: bold"><em> Aman International School</em></span> welcomes you to our website. This is to inform you that admissions for the new academic session are open. The deadline of the form-filling process is till <strong style="color: lawngreen">30th of April </strong>, kindly fill it as early as possible. 
+ 		Ever since its inception in the early 90's, Aman International Education Society has held a towering presence, making way and thus upholding the Society's motto to provide "Quality and Accessible Education".<br>We try to create an atmosphere of reverence for education and a healthy environment where academics, sports, and co-curricular facilities mould our students and motivate them to be the brightest and the best.<br>
+ 		<strong>Genesis: </strong>  Once in a way dreaming the impossible may be the most practical thing to do. The report of the education commission on the emergence of an egalitarian and integrated society, spoke of a dream, a dream every committed educationist in India has, a dream of providing quality education to children in every part of our vast country. This very same dream is what inspires the <span style="color:magenta; font-weight: 600; font-style: italic;">Aman International School</span>  Society to nurture a family of over 50 schools even in the remotest, most inaccessible parts of the country and abroad.
+    </p>
+    </div>
+<br> <br><br> <br>
+<div align="center">
+<h1 style="font-family: serif; font-weight: 900;" >Our branches and their info.</h1>
+	<br>
+<table cellpadding="20px" id="tbl">
+  <thead>
+    <tr>
+      <th>Branches</th>
+      <th>Contact Info.</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody id="mytable">
+    <tr>
+      <td>Bhilwara</td>
+      <td>+91 8824643330</td>
+      <td>somaniaman2000@gmail.com</td>
+    </tr>
+    <tr>
+   
+      <td>Muzzafarbaad</td>
+      <td>01482-235820</td>
+      <td>aman2021@gmail.com</td>
+    </tr>
+    <tr>
+
+      <td>Nallagaon</td>
+      <td>+91 9414736386</td>
+      <td>smniweb@ymail.com</td>
+    </tr>
+    <tr>
+   
+      <td>Jalandar</td>
+      <td>+91 9714173314</td>
+      <td>jasmindar26@gmail.com</td>
+    </tr>
+    <tr>
+   
+      <td>Aurangabad</td>
+      <td>+91 9717213314</td>
+      <td>bhatti56@gmail.com</td>
+    </tr>
+    <tr>
+   
+      <td>Jodhpur</td>
+      <td>06258-297635</td>
+      <td>jdth@gmail.com</td>
+    </tr>
+    <tr>
+   
+      <td>Gandhi Nagar</td>
+      <td>+91 8714623314</td>
+      <td>guj@gmail.com</td>
+    </tr>
+  </tbody>
+</table>
+<br><h4 style="color: blue">Search for the nearest branch here:</h4><br>
+<input type="text" id="filter">
+
+</div> <br><br> 
+
+
+<div id="why_choose">
+   <br>
+   <br>
+   <br>
+    <h1 class="back_btn">Why Choose Us</h1> 
+     
+     <div>
+  <div class="div_section1">
+     <div class="icon"><i class="fas fa-school"></i></div>
+      <h2>Huge School Campus</h2>
+      <p>The diversification and expansion of the School through adoption 
+       of new and topically relevant courses has led to further enhancement of
+      our infrastructure in order to fulfill our growing needs</p>
+  </div>  
+       
+       
+  <div class="div_section1">
+     <div class="icon"><i class="fas fa-laptop"></i></div>
+      <h2>Computer Education</h2>
+      <p>Computers have taken over a major part of human activities and 
+        enabled people to have more leisure by reducing his work-load. 
+        Computer Education is started from the primary classes and is one of the
+      optional subjects in the Senior Secondary classes.
+     </p>
+  </div>  
+        
+  <div class="div_section1">
+     <div class="icon"><i class="fas fa-music"></i></div>
+      <h2>Music &amp; Dance</h2>
+      <p>Training of Vocal as well as instrumental music is provided 
+       according to the taste and interest of the students from Std. I to XII. 
+      'Indian classical' and 'western dance' are taught in the school by 
+       experts to train, guide and help those students interested in this form of art.
+      </p>
+  </div>  
+       
+       
+  <div class="div_section1">
+     <div class="icon"><i class="fas fa-flask"></i></div>
+      <h2>Science Laboratory</h2>
+      <p>The school has a well equipped laboratory of Physics, Chemistry, 
+      Biology, Computer Science, Maths and Social Studies for the students to 
+      experiment and learn because learning by doing makes concrete concept formation
+     </p>
+  </div> 
+  </div> 
+    </div><br><br><br>
+  </div>
+  <br>
+
+<br><br>
+<div>      
+  <br>
+          <br>
+          <marquee scrollamount="17" behavior="alternate"><img src="images/ct1.jpg"  width="400px" height="300px"><img src="images/ct2.jpg" width="400px" height="300px"><img src="images/ct3.jpg"   width="400px" height="300px"><img src="images/ct4.jpg"  width="400px" height="300px"><img src="images/ct5.jpg" width="400px" height="300px"></marquee>
+       
+
+        <br><br>
+      </div><br><br>
+      <div>
+
+<h1 align="center"><font color="purple" face="Georgia" ><b>School Rankings :</b></font></h1>
+       <div align="center">
+           <br>
+           <table align="center" class="rnk"  style="background-color: box-shadow: 0 9px 50px hsla(20, 67%, 75%, 0.31);
+    background-image: linear-gradient(-225deg, #E3FDF5 50%, #FFE6FA 50%);">
+               <tr>
+                   <th>Ranking Framework/Years</th>
+                   <th>NIRF</th>
+                   <th>CTC</th>
+                   <th>AWC</th>
+                   <th>Shiksha.com</th>
+               </tr>
+               <tr>
+                   <th>2016</th>
+                   <td>20th</td>
+                   <td>-</td>
+                   <td>25th</td>
+                   <td>29th</td>
+               </tr>
+               <tr>
+                   <th>2017</th>
+                   <td>26th</td>
+                   <td>14th</td>
+                   <td colspan="2">18th</td>
+                   
+               </tr>
+               <tr>
+                   <th rowspan="2">2018 and 2018(revised)</th>
+                   <td>24th</td>
+                   <td>28th</td>
+                   <td>25th</td>
+                   <td>19th</td>
+               </tr>
+               <tr>
+                   
+                   <td>30th</td>
+                   <td>28th</td>
+                   <td>15th</td>
+                   <td>17th</td>
+               </tr>
+               <tr>
+                   <th>2019</th>
+                   <td>30th</td>
+                   <td>28th</td>
+                   <td>15th</td>
+                   <td>17th</td>
+               </tr>
+               <tr>
+                   <th>2020</th>
+                   <td>20th</td>
+                   <td>34th</td>
+                   <td>-</td>
+                   <td>9th</td>
+               </tr>
+           </table>
+       </p>
+       <br>
+       </div>
+  
+
+</div>
+
+        <div class="fixed">
+         	<a href="/regi" class="back_btn" ><i class="fa fa-user-plus"></i><br><h6>Register</h6></a>
+
+         </div>
+         <div class="fixed1">
+         <a href="/log" class="back_btn"  ><i class="fas fa-user"></i><br><h6>Login</h6></a>
+     </div>
+
+
+
+
+
+
+
+
+
+<div class="footer">
+
+     <footer class="ct-footer">
+                <div class="container">
+                    <form name="contentForm" enctype="multipart/form-data" method="post" action="">
+                        <div class="ct-footer-pre text-center-lg">
+                            <div class="inner">
+                                <span><span style="color: cyan">Register now to secure your future</span>, because we believe in converting your aspirations into success</span>
+                            </div>
+                            <div class="inner">
+                                <div class="form-group">
+                                    <a  href='/sign' type="submit" class="btn btn-motive">Register</a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <ul class="ct-footer-list text-center-sm">
+                        <li>
+                            <h2 class="ct-footer-list-header">
+                                Learn More
+                            </h2>
+                            <ul>
+                                <li>
+                                    <a href="">Corporation</a>
+                                </li>
+                                <li>
+                                    <a href="">Clients</a>
+                                </li>
+                                <li>
+                                    <a href="">News</a>
+                                </li>
+                                <li>
+                                    <a href="">Careers</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h2 class="ct-footer-list-header">
+                                Job Openings
+                            </h2>
+                            <ul>
+                                <li>
+                                    <a href="">1st-5th</a>
+                                </li>
+                                <li>
+                                    <a href="">6th-8th</a>
+                                </li>
+                                <li>
+                                    <a href="">9th-10th</a>
+                                </li>
+                                <li>
+                                    <a href="">11th-12th</a>
+                                </li>
+                                <li>
+                                    <a href="">Programming</a>
+                                </li>
+                                
+                            </ul>
+                        </li>
+                        <li>
+                            <h2 class="ct-footer-list-header">
+                                Our Industry
+                            </h2>
+                            <ul>
+                             
+                                <li>
+                                    <a href="">Webinars</a>
+                                </li>
+                                <li>
+                                    <a href="">Events</a>
+                                </li>
+                                <li>
+                                    <a href="">Sponsorships</a>
+                                </li>
+                                <li>
+                                    <a href="">Advisors</a>
+                                </li>
+                                <li>
+                                    <a href="">Training Program</a>
+                                </li>
+                                <li>
+                                    <a href="">Activities &amp; Campaigns</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h2 class="ct-footer-list-header">
+                                Public Relations
+                            </h2>
+                            <ul>
+                                <li>
+                                    <a href="">CBSE Affiliation</a>
+                                </li>
+                                <li>
+                                    <a href="">State Boards</a>
+                                </li>
+                       
+                                <li>
+                                    <a href="">News Releases</a>
+                                </li>
+                                <li>
+                                    <a href="">Newsletters</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h2 class="ct-footer-list-header">
+                                About
+                            </h2>
+                            <ul>
+                                <li>
+                                    <a href="#">FAQ</a>
+                                </li>
+                                <li>
+                                    <a href="#">Our Board</a>
+                                </li>
+                                <li>
+                                    <a href="#">Our Staff</a>
+                                </li>
+                                <li>
+                                    <a href="#">Contact Us</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="ct-footer-meta text-center-sm">
+                        <div class="row">
+                           
+                            <div class="col-sm-6 col-md-3">
+                                <address>
+                                    <span style="color: cyan; font-weight: 900;font-size: 40px;">Aman's Corporation<br></span>5-K-7 R.C Vyas Colony<br>
+                                    Bhilwara, Rajasthan, India<br>
+                                    <span>Phone: <a href="tel:08824643330">+91 8824643330</a></span>
+                                </address>
+                            </div>
+                          <p style="color: white; font-weight: 700;font-size: 20px;">Follow Us on:</p>
+                        <div class="col-sm-6 col-md-3">
+                                <ul class="ct-socials list-unstyled list-inline">
+                                    <li>
+                                        <a href="https://www.facebook.com/aman.somani.503" target="_blank"><img alt="facebook" src="images/facebook.png" width="50px" height="50px" background='white'></a>
+                                    </li>
+                                    <li>
+                                        <a href="https://twitter.com/?lang=en" target="_blank"><img alt="twitter" src="images/twitter.png" width="50px" height="50px"></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" target="_blank"><img alt="youtube" src="images/youtube.png" width="50px" height="50px"></a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.instagram.com/amansomani1234/" target="_blank"><img alt="instagram" src="images/instagram.png" width="50px" height="50px"></a>
+                                    </li>
+                                    <li>
+                                        <a href="https://github.com/Aman235820" target="_blank"><img alt="github" src="images/github.png" width="50px" height="50px"></a>
+                                    </li>
+                                   
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                     <p style="color: white; margin: 20px; font-size:15px" align="center">
+                                Copyright © 2021<br> Aman International Schools & Corporation (pvt) Ltd. &nbsp;<br><a href="https://github.com/Aman235820" target="_blank">Privacy Policy</a>
+                            <br><br><span>Creator: Aman Somani</span>
+                            <br> </p><br>
+                </div>
+                
+            </footer>
+
+        </div>
+
+ <script type="text/javascript">
+     	var i=0;
+	var images=["images/1.jpg","images/2.jpg","images/3.jpg","images/4.jpg","images/5.jpg","images/6.jpg","images/7.jpg","images/8.jpg"] ;
+
+	var s=setInterval(function(){
+        document.aman.src=images[i];
+        if(i<images.length-1){
+        	i++;
+        }
+        else
+        	i=0;
+	},2500);
+
+
+
+
+
+
+
+
+	$(document).ready(function(){
+$("#tbl tr:odd").css({"background-color": "grey","color":"white"});
+
+$("#filter").keyup(function() {
+    var value = $(this).val().toLowerCase();
+    $("#mytable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+
+
+	});
+});
+</script>
+
+</body>
+
+</html>

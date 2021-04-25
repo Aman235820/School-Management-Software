@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Online Registration Form</title>
+  <link rel="stylesheet" type="text/css" href="css/regi.css">
+</head>
+
+<body>
+  <nav>
+    <div align="right" style="font-size: 20px; margin: 30px;">
+    <a href="/">Home</a>
+    <a href="/login">Login</a>
+</div>
+  </nav>
+  <br>
+  
+  <br>
+  
+  <div class="form" align="center">
+  
+      <div class="logo">
+      <h1><B><span style="text-shadow: 5px 5px 10px lime;">Online</span> <span style="text-shadow: 5px 5px  10px red;">Registration</span> <span style="text-shadow: 5px 5px  10px cyan;">Portal for Student</span></B></h1>
+  
+
+   
+</div> 
+    <br>
+    <form id="frm"  name="form"  method="post"  action="/register"  onsubmit="return validate()" autocomplete="off" enctype="multipart/form-data">
+  <div>
+    <label style="padding: 20px;">First Name<span style="color: red; ">*</span></label>
+    <input type="text" id="fname"  name="fname"  onfocus="onf(this)"  onblur="onb(this)"><br>
+    <small id="1" style="color: red; font-weight: bold; padding-left: 20px;"></small>
+  </div><br>
+  <div>
+  <label style="padding: 20px;">Last Name<span style="color: red; ">*</span></label>
+  <input type="text" id="lname" name="lname" onfocus="onf(this)" onblur="onb(this)" ><br>
+  <small id="1a" style="color: red; font-weight: bold; padding-left: 20px;"></small>
+   </div><br>
+   <div>
+    <label style="padding: 20px;">Mobile Number<span style="color: red; ">*</span></label>
+  
+    <input type="text" id="Phone" name="Phone"  onfocus="onf(this)" onblur="onb(this)" value="8824643330"><br>
+    <small id="2" style="color: red; font-weight: bold; padding-left: 20px;"></small>
+  
+  </div><br>
+   <div>
+    <label style="padding: 20px;">Age<span style="color: red;">*</span></label>
+    <input type="text" id="age" name="age" onfocus="onf(this)" onblur="onb(this)" value="20"><br>
+   <small id="3" style="color: red; font-weight: bold; padding-left: 20px;"></small>
+    
+   </div><br>
+    <div>
+    <label style="padding: 10px;">Gender<span style="color: red;">*</span></label>
+   
+    <input type="radio" id="Male" name="Gender" value="Male"><label for="Male">Male</label>
+    <input type="radio" id="Female" name="Gender" value="Female"><label for="Female">Female</label>
+    <input type="radio" id="Other" name="Gender" value="Other"><label for="Other">Other</label><br>
+    <small id="4" style="color: red; font-weight: bold; padding-left: 20px;"></small>
+  
+    </div><br>
+    <div>
+    <label style="padding: 20px;">Email Address<span style="color: red;">*</span></label>
+    <input type="text" id="email" name="email" onfocus="onf(this)" onblur="onb(this)"><br>
+     <small id="5" style="color: red; font-weight: bold; padding-left: 20px;"></small>
+  
+   </div><br>
+    <div>
+      <label style="padding: 20px;">Password<span style="color: red;">*</span></label><small id="1" style="color: red;"></small>
+      <input type="Password" id="Password" name="password" onfocus="onf(this)" onblur="onb(this)"><br>
+       <small id="6" style="color: red; font-weight: bold; padding-left: 20px;"></small>
+  
+    </div><br>
+    <div>
+      <label style="padding: 20px;">Confirm Password<span style="color: red;">*</span></label><small id="1" style="color: red;"></small>
+      <input type="Password" id="Confirm Password" onfocus="onf(this)" onblur="onb(this)"><br>
+      <small id="7" style="color: red; font-weight: bold; padding-left: 20px;"></small>
+  
+    </div><br>
+    <div>
+      <label style="padding: 20px;">Address<span style="color: red;">*</span></label><br><small id="1" style="color: red;"></small>
+      <textarea id="Address" name="address" onfocus="onf(this)" onblur="onb(this)"></textarea><br>
+      <small id="8" style="color: red; font-weight: bold; padding-left: 20px;"></small>
+  
+    </div><br>
+    <br>
+    <div>
+      <h3>Upload your profile image here:</h3><input type="file" name="pimage"><br>
+    </div>
+    <br>
+    <div>
+
+      <input type="submit" name="submit" value="Register" class="button">
+      <button  type="reset" name="reset" style="float:center; " onclick="frmreset()" class="button">Reset Form</button>
+    </div>
+</form>
+  </div>
+  
+
+</body>
+<script type="text/javascript">
+    
+
+      function onf(x){
+        x.style.background="azure";
+      }
+      function onb(y){
+        y.style.background="lavender";
+      }
+
+      function frmreset(){
+        document.getElementById("frm").reset();
+      }
+      
+      function validate(){
+              
+              var a=/\D/;
+              var b=document.getElementById("fname").value;
+              if(document.getElementById("fname").value=="" || document.getElementById("fname").value=="null"
+                || b.length<2)
+              {
+                 document.getElementById("1").innerHTML="**Name should be 2 to 5 characters long";
+                return false;
+              }
+              if(a.test(b)==false)  {
+                document.getElementById("1").innerHTML="**Enter alphabets only";
+                return false;
+              }
+
+              var aa=/\D/;
+              var bb=document.getElementById("lname").value;
+              if(document.getElementById("lname").value=="" || document.getElementById("lname").value=="null"
+                || bb.length<2)
+              {
+                 document.getElementById("1a").innerHTML="**Lastname should be 2 to 5 characters long";
+                return false;
+              }
+              if(aa.test(bb)==false)  {
+                document.getElementById("1a").innerHTML="**Enter alphabets only";
+                return false;
+              }
+              
+         
+
+              var c=/^[6789]\d{9}$/;
+              var d=document.getElementById("Phone").value;
+              if(c.test(d)==false){
+                document.getElementById("2").innerHTML="**Invalid Mobile Number";
+                   return false;
+              }
+
+              var e=document.getElementById("age").value;
+              if(e<=0 || isNaN(e)==true || e==""){
+                document.getElementById("3").innerHTML="**Enter correct age";
+                   return false;
+              }
+
+              var f=document.forms["form"].elements["Gender"].value;
+              if(f=="null" || f==""){
+                  document.getElementById("4").innerHTML="**Please Select your Gender";
+                   return false;
+              }
+
+              var g=document.getElementById("email").value;
+              var atpos= g.indexOf("@");
+              var dotpos= g.lastIndexOf(".");
+              if(atpos<1 ||atpos+2>=dotpos || dotpos+2>=g.length){
+                 document.getElementById("5").innerHTML="**Invalid Email Address";
+               return false;
+              }
+              
+              var h=document.getElementById("Password").value;
+              if(h==""){
+                document.getElementById("6").innerHTML="**Please enter your Password";
+               return false;
+              }
+              if(h.length<3 && h.length>0){
+                document.getElementById("6").innerHTML="**Password is too short and weak";
+               return false;
+              
+              } 
+
+              var i=document.getElementById("Confirm Password").value;
+              if(h!=i){
+                 document.getElementById("7").innerHTML="**Passwords aren't matching";
+               return false;
+              }
+
+              var j=document.getElementById("Address").value;
+              if(j=="" || j=="null"){
+                 document.getElementById("8").innerHTML="**Please enter your residential Address";
+               return false;
+              
+              }
+              
+      }
+     </script>
+</html>

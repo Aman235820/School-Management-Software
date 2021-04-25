@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <title>All Students</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
+    <style type="text/css">
+      .box{
+        border:2px solid black;
+        width: 300px;
+        position: relative;
+        padding: 5px;
+        margin:5px;
+      }
+      .lnk:link{
+          text-decoration:none;
+      }
+      .lnk:hover{
+        font-size: 17px;
+        color: red;
+      }
+      .ser{
+        width: 100%;
+        margin: 3%;
+      }
+      .ser input{
+        width: 70%;
+        font-family: serif;
+        font-size: 20px;
+        padding: 5px;
+        border:3px solid black;
+        border-radius: 10px;
+      }
+
+    </style>
+</head>
+<body>
+  <nav align='right'>
+    <h3 style="margin-right: 2%; "><a class="btn btn-danger" href="/">Home</a></h3>
+  </nav><br>
+    <div align="center" class="ser"><h1>Students Profile</h1><br>
+    <h4 style="color: blue">Search student here:</h4><br>
+<input type="text" id="filter"></div><br>
+      {{#each users}}
+      
+      <div class="box">
+      <img src="{{image}}" height="100" width="100">
+      <a href="/dispstd/{{_id}}" class="lnk"><h3>{{firstName}} {{lastName}}</h3></a>
+      <p>Age:{{age}}</p><br>
+      <a href="/dispstd/{{_id}}" style="position: absolute; left: 0px;"><img src="edit.png" height="30px" width="30px"></a><a href="/delete/{{_id}}"  style="position: absolute; left: 40px;"><img src="trash.png" height="30px" width="30px"></a><br>
+      <form action="/marks/{{_id}}" method="get">
+        <br>
+        <button>Enter Marks</button><br><br><a href="/downloadTC/{{_id}}" style="height: 30px; padding: 0px 5px 0px 5px;" class="btn btn-danger">Generate TC</a><br>
+      </form>
+    </div>
+   <br>
+       
+    </div>
+
+  {{/each}}
+  <script type="text/javascript">
+    
+
+    $(document).ready(function(){
+
+$("#filter").keyup(function() {
+    var value = $(this).val().toLowerCase();
+    $(".box").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+
+
+  });
+});
+  </script>
+</body>
+</html>

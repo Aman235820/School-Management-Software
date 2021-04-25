@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{{#each users}}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{{Name}}'s Attendance</title>
+	<style type="text/css">
+		table tr{
+			text-align:center;
+		}
+	</style>
+</head>
+<body>
+	<br><br><br><br>
+	<h2 align="center">{{Name}}'s attendance till date : <span style="color: orange"> {{Tilldate}}</span></h2>
+	<br><br><br>
+	<table align="center" border="1" width="50%" height="100px" >
+		<tr>
+			<th>Physics</th>
+			<th>Chemistry</th>
+			<th>Mathematics</th>
+			<th>Overall class Attendance in %</th>
+		</tr>
+		<tr>
+			<td>{{Physics}}/50</td>
+			<td>{{Chemistry}}/50</td>
+			<td>{{Mathematics}}/50</td>
+			<td><span id="pr"></span>%</td>
+		</tr>
+	</table>
+<script type="text/javascript">
+	var per=(Number("{{Physics}}")+Number("{{Chemistry}}")+Number("{{Mathematics}}")*100)/150;
+	document.getElementById('pr').innerHTML=per.toFixed(2);
+</script>
+</body>
+{{/each}}
+</html>

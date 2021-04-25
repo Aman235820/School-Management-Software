@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{{#each users}}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Mark Entry for {{firstName}} {{lastName}}</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style type="text/css">
+    	.panel{
+    		display: none;
+    		width: 40%;
+    		height: 200px;
+    	}
+    </style>
+  
+</head>
+<body>
+	<form  action="/result/{{_id}}" method="post" onsubmit="return validate()">
+	  <div class="tbl" align="center" >
+	  	<h2>Student Name:{{firstName}} {{lastName}}</h2>
+	  	<h3 style="color: red">Student's Unique Id: {{_id}}</h3>
+		<table border="1px" width="50%" height="200px">
+			<tr>
+				<th>PHYSICS</th>
+				<th>CHEMISTRY</th>
+				<th>MATHEMATICS</th>
+			</tr>
+			<tr>
+				<td><input type="number" name="phy" id="1">  /100</td>
+				<td><input type="number" name="chm" id="2">  /100</td>
+				<td><input type="number" name="mat" id="3">  /100</td>
+			</tr>
+		</table>
+		<br>
+		<div class="panel">
+		<h3>Marks Scored in Physics: <span id="phy" style="color: red"></span></h3><br>
+		<h3>Marks Scored in Chemistry: <span id="chm" style="color: red"></span></h3><br>
+		<h3>Marks Scored in Mathematics: <span id="mat" style="color: red"></span></h3><br>
+		<h3>Percentage:<span id="per" style="color: green"></span> %</h3>
+
+		<br>
+		<input type="submit" name="submit" value="Submit" class="button">
+
+		<br>
+		<span id="null" style="color: red; font-size: 20px;"></span><br>
+		<span id="nve" style="color: red; font-size: 20px;"></span>
+		<span id="full" style="color: red; font-size: 20px;"></span>
+	</div>
+		
+	  </div>
+	  <input type="hidden" name="name" value="{{firstName}} {{lastName}}">
+	  <input type="hidden" name="id" value="{{_id}}">
+	  <input type="hidden" name="percentage" id="pers">
+	 
+	</form>
+
+
+
+{{/each}}
+</body>
+<script type="text/javascript">
+	$(document).ready(function(){
+
+
+		$("#3").keyup(function(){
+			$(".panel").slideDown(1500);
+		});
+	});
+   
+
+   var a=document.getElementById('3');
+
+    a.addEventListener("keyup",function(){
+
+    var p=document.getElementById("1").value;
+    var c=document.getElementById("2").value;
+    var m=document.getElementById("3").value;
+	document.getElementById('phy').innerHTML=p;
+	document.getElementById('chm').innerHTML=c;
+	document.getElementById('mat').innerHTML=m;
+
+
+
+var pr= (Number(p)+Number(c)+Number(m))*100/300;
+
+document.getElementById('per').innerHTML= pr.toFixed(2);
+document.getElementById('pers').value=pr.toFixed(2);
+});
+
+    function validate(){
+              
+              	var p=document.getElementById("1").value;
+    			var c=document.getElementById("2").value;
+    			var m=document.getElementById("3").value;
+         
+              if(p=="" || c=="" || m=="")
+              {
+                 document.getElementById("null").innerHTML="**Fields cannot be empty";
+              	return false;
+              }
+              if(p<0 || c<0 || m<0)	{
+                document.getElementById("nve").innerHTML="**Marks cannot be negative";
+                return false;
+              }
+              if(p>100 || c>100 || m>100)	{
+                document.getElementById("full").innerHTML="**Marks cannot be greater 100";
+                return false;
+              }
+
+
+	}
+</script>
+</html>
