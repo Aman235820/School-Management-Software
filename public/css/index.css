@@ -172,6 +172,7 @@ i {
 	position:fixed;
 	top:450px;
 	right:0px;
+    margin-right: auto;
 	font-size: 3em;
 }
 
@@ -231,6 +232,7 @@ i {
 
 .back_btn {
             animation: back_btn 0.8s infinite;
+
         }
  
         @keyframes back_btn {
@@ -245,6 +247,11 @@ i {
             100% {
                 color: #03a9f4;
             }
+        }
+
+        .back_btn:hover{
+            text-decoration: none;
+            font-size: 60px;
         }
 
 

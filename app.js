@@ -389,7 +389,40 @@ app.get('/downloadTC/:id',async(req,res)=>{
   }
         
 
-});app.get("*",(req,res)=>{
+});
+
+app.get('/admlogin',(req,res)=>{
+	res.render('admlogin')
+});
+
+app.post("/administ",(req,res)=>{
+  try{
+    const email=req.body.email;
+    const password=req.body.password;
+const e="admin@gmail.com";
+const p="1234";
+if(email==e&&password==p){
+  res.render('admin');
+}
+	else
+    	{
+    		res.status(400).render('admlogin',{
+    	error:"**Invalid login credintials"
+    });
+    	}
+
+    }catch(err){res.status(400).render('admlogin',{
+    	error:"**Invalid login credintials"
+    })};
+ });
+
+
+
+
+
+
+
+app.get("*",(req,res)=>{
 	res.send("Error 404");
 });
 app.listen(port,()=>{

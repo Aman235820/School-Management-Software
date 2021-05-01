@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css">
+<script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/entries.css">
+</head>
+<body>
+  <nav>
+    <div align="right" style="font-size: 20px; margin: 30px;">
+    <a href="/">Home</a>
+</div>
+  </nav>
+<br>
+<div class="overlay">
+<form method="post" action="/administ" autocomplete="off">
+   <!--   con = Container  for items in the form-->
+   <div class="con">
+   <!--     Start  header Content  -->
+   <header class="head-form">
+    <h1 style="font-size: 70px"><i class="fas fa-user-circle"></i></h1>
+      <h2>Administration Login</h2>
+      <!--     A welcome message or an explanation of the login form -->
+      <p>Login Portal for Admin</p>
+   </header>
+   <!--     End  header Content  -->
+   <br>
+   <div class="field-set">
+     
+      <!--   user name -->
+         <span class="input-item">
+           <i class="fa fa-user-circle"></i>
+         </span>
+        <!--   user name Input-->
+         <input class="form-input" id="txt-input" type="text" name="email"  placeholder="@UserName">
+     
+      <br>
+     
+           <!--   Password -->
+     
+      <span class="input-item">
+        <i class="fa fa-key"></i>
+       </span>
+      <!--   Password Input-->
+      <input class="form-input" type="password" placeholder="Password" id="pwd"  name="password">
+     
+<!--      Show/hide password  -->
+     <span>
+        <i class="fa fa-eye" aria-hidden="true"  type="button" id="eye"></i>
+     </span>
+     
+     
+      <br>
+<!--        buttons -->
+<!--      button LogIn -->
+      <button class="log-in"> Log In </button>
+      <br>
+  <small style="color: red; font-weight: bold; padding-left: 20px;">{{error}}</small>
+   </div>
+   </form>
+  
+     
+<!--   End Conrainer  -->
+ 
+  
+  <!-- End Form -->
+</div>
+<script type="text/javascript">
+  
+
+
+  $(document).ready(function(){
+
+
+function show() {
+    var p = document.getElementById('pwd');
+    p.setAttribute('type', 'text');
+}
+
+function hide() {
+    var p = document.getElementById('pwd');
+    p.setAttribute('type', 'password');
+}
+
+var pwShown = 0;
+
+document.getElementById("eye").addEventListener("click", function () {
+    if (pwShown == 0) {
+        pwShown = 1;
+        show();
+    } else {
+        pwShown = 0;
+        hide();
+    }
+}, false);
+
+
+
+  });
+</script>
+</body>
+</html>
