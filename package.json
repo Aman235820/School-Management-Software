@@ -4,15 +4,14 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start" : "node app.js"
+    "start": "node app.js"
   },
-
   "author": "Aman",
   "license": "ISC",
   "dependencies": {
     "@handlebars/allow-prototype-access": "^1.0.3",
+    "convert-excel-to-json": "^1.7.0",
     "express": "^4.17.1",
     "express-handlebars": "^5.3.0",
     "express-pdf": "^1.2.2",

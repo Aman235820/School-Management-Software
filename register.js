@@ -34,8 +34,7 @@ const stdSchema= new mongoose.Schema({
 		require:true
 	},
 	image:{
-		type:String,
-		require:true
+		type:String
 	}
 
 });

@@ -18,6 +18,8 @@ const attendance=require('./attendance');
 const marks = require('./marks')
 const fs = require('fs');
 
+const excelToJson = require('convert-excel-to-json');
+
 const pdf=require('pdfkit');
 const myDoc=new pdf();
 
@@ -74,6 +76,16 @@ app.get("/signint",(req,res)=>{
 });
 app.get("/logint",(req,res)=>{
 	res.render('logint');
+});
+
+
+
+app.get('/admin',(req,res)=>{
+	res.render('admin')
+});
+
+app.get("/pss",(req,res)=>{
+	res.render('pss');
 });
 
 
@@ -231,7 +243,7 @@ app.get("/delete/:id",async(req,res)=>{
     try{
 	const id= req.params.id;
 	const del = await register.findByIdAndDelete(id);
-	res.redirect("/disp");
+	res.redirect("/allstds");
        
     }catch(error){
       res.status(404).send("error");
@@ -415,6 +427,149 @@ if(email==e&&password==p){
     	error:"**Invalid login credintials"
     })};
  });
+
+app.get('/allstds',async(req,res)=>{
+	try{
+	const display= await register.find();
+	res.render('allstds',{
+		users:display
+	});
+}catch(error){
+      res.status(404).send("error");
+  }
+});
+
+app.get('/facultydisp',async(req,res)=>{
+	try{
+	const display= await teacher.find();
+	res.render('facultydisp',{
+		users:display
+	});
+}catch(error){
+      res.status(404).send("error");
+  }
+});
+
+app.get("/dispteach/:id" ,async(req,res)=>{
+	try{
+
+		const id=req.params.id;
+	const show= await teacher.find({_id:id});
+	//console.log(show);
+    
+        res.render('dispteach',{
+        	users:show
+        });
+   } catch(error){
+      res.status(404).send("error");
+    }
+});
+
+app.post("/updatefac/:id" ,async(req,res)=>{
+
+	try{
+		const id=req.params.id;
+		const update=await teacher.findByIdAndUpdate(id,{firstName:req.body.fname,
+			lastName:req.body.lname,
+			mobileNumber:req.body.phn,
+			age:req.body.age,
+	 		address:req.body.add
+	 		});
+
+		res.redirect('/facultydisp');
+   } catch(error){
+      res.status(404).send("error");
+    }
+});
+
+app.get("/deleteteach/:id",async(req,res)=>{
+    try{
+	const id= req.params.id;
+	const del = await teacher.findByIdAndDelete(id);
+	res.redirect("/facultydisp");
+       
+    }catch(error){
+      res.status(404).send("error");
+    }
+
+});
+
+
+
+
+
+
+
+app.post("/pssd",async(req,res)=>{
+	try{
+	if(req.body.pswd=='1234'){
+		let MongoClient = require('mongodb').MongoClient;
+let url = 'mongodb+srv://aman:somaniaman@cluster0.2rxcu.mongodb.net/schoolmg?retryWrites=true&w=majority';
+
+// -> Read Excel File to Json Data
+
+const excelData = excelToJson({
+    sourceFile: 'customers.xlsx',
+    sheets:[{
+		// Excel Sheet Name
+        name: 'Customers',
+		
+		// Header Row -> be skipped and will not be present at our result object.
+		header:{
+            rows: 1
+        },
+		
+		// Mapping columns to keys
+        columnToKey: {
+        	A: 'firstName',
+ 			B: 'lastName',
+			C: 'mobileNumber',
+			D: 'age',
+			E: 'gender',
+			F: 'emailAddress',
+			G: 'password',
+			H: 'address'
+        }
+    }]
+});
+
+// -> Log Excel Data to Console
+console.log(excelData);
+
+// -> Insert Json-Object to MongoDB
+MongoClient.connect(url, { useNewUrlParser: true }, (err, db) => {
+  if (err) throw err;
+  
+  var dbo = db.db("schoolmg");
+  
+  dbo.collection("records").insertMany(excelData.Customers, (err, res) => {
+	if (err) throw err;
+	
+	console.log("Number of documents inserted: " + res.insertedCount);
+	db.close();
+  });
+});
+
+
+	res.redirect("/allstds");
+
+	}
+	else{
+		res.render('pss',{
+			err:'Wrong Password'
+		});
+	}
+
+
+
+}catch(error){
+      res.status(404).send("error");
+  }
+});
+
+
+
+
 
 
 

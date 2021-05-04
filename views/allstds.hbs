@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/btn.css">
+    <title>All Students</title>
+    <style type="text/css">
+      .box{
+        position: relative;
+        width: 80%;
+        height: 20px;
+        background-color:lightgrey;
+        color: blue;
+      }
+      .img1{
+        position: absolute;
+        right: 8%;
+      }
+      .img2{
+        position: absolute;
+        right:0%;
+      }
+
+      .nav{
+        width: 100%;
+        height: 50px;
+        margin-bottom: 20px;
+        color: red;
+      }
+
+    </style>
+</head>
+<body>
+  <nav align='right'>
+    <h3 style="margin-right: 2%; "><a href="/" class="button"><span>Home</span></a><a href="/admin" class="button"><span>Back</span></a></h3>
+  </nav><br>
+    <div align="center" class="ser"><h1>All students</h1></div><br>
+      <nav class="nav">
+    <span>Search student here:</span>
+<input type="text" id="filter"><br>
+</nav>
+      {{#each users}}
+      
+      <div class="box">
+      <span>{{firstName}} {{lastName}}</span>
+      <a href="/dispstd/{{_id}}"><span><img class="img1" src="edit.png" height="20px" width="20px"></a><a href="/delete/{{_id}}"><img class="img2" src="trash.png" height="20px" width="20px"></a></span><br>
+    </div>
+   <br>
+       
+    </div>
+
+  {{/each}}
+  <script type="text/javascript">
+    
+
+    $(document).ready(function(){
+
+$("#filter").keyup(function() {
+    var value = $(this).val().toLowerCase();
+    $(".box").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+
+
+  });
+});
+  </script>
+</body>
+</html>

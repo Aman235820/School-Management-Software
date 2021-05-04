@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
+   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css">
     <title>All Students</title>
     <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
     <style type="text/css">
@@ -48,10 +48,10 @@
       {{#each users}}
       
       <div class="box">
-      <img src="{{image}}" height="100" width="100">
+       <i class="fas fa-user-graduate" style="font-size: 4em;"></i>
       <a href="/dispstd/{{_id}}" class="lnk"><h3>{{firstName}} {{lastName}}</h3></a>
       <p>Age:{{age}}</p><br>
-      <a href="/dispstd/{{_id}}" style="position: absolute; left: 0px;"><img src="edit.png" height="30px" width="30px"></a><a href="/delete/{{_id}}"  style="position: absolute; left: 40px;"><img src="trash.png" height="30px" width="30px"></a><br>
+      <a href="/showattd/{{_id}}" class='btn btn-primary'>View Attendance</a>
       <form action="/marks/{{_id}}" method="get">
         <br>
         <button>Enter Marks</button><br><br><a href="/downloadTC/{{_id}}" style="height: 30px; padding: 0px 5px 0px 5px;" class="btn btn-danger">Generate TC</a><br>

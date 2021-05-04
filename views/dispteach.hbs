@@ -18,7 +18,7 @@
 	
 	<hr>
 	<ul style="list-style: none;">
-		<li>Student Name:{{firstName}} {{lastName}}</li>
+		<li>Faculty Name:{{firstName}} {{lastName}}</li>
 		<li>Mobile Number:{{mobileNumber}}</li>
 		<li>Age:{{age}}</li>
 		<li>Login Credential:{{emailAddress}}</li>
@@ -29,11 +29,11 @@
 	
 	<br>
 <div>
-	<h2>Update Student</h2>
+	<h2>Update Faculty</h2>
 	<div class="box">
-	<form method="post" action="/update/{{_id}}">
-		<label>Student's firstname:</label><input type="text" name="fname" value="{{firstName}}">
-		<label>Student's lastname:</label><input type="text" name="lname" value="{{lastName}}"><br><br>
+	<form method="post" action="/updatefac/{{_id}}">
+		<label>Faculty's firstname:</label><input type="text" name="fname" value="{{firstName}}">
+		<label>Faculty's lastname:</label><input type="text" name="lname" value="{{lastName}}"><br><br>
 		<label>Mobile Number:</label><input type="text" name="phn" value="{{mobileNumber}}"><br><br>
 		<label>Age:</label><input type="text" name="age" value="{{age}}"><br><br>
 		<label>Address:</label><textarea type="text" name="add" value="{{address}}"></textarea><br>
