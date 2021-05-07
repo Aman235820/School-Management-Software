@@ -17,6 +17,7 @@ const teacher=require('./teacher');
 const attendance=require('./attendance');
 const marks = require('./marks')
 const fs = require('fs');
+const message=require('./stdmsg');
 
 const excelToJson = require('convert-excel-to-json');
 
@@ -568,6 +569,39 @@ MongoClient.connect(url, { useNewUrlParser: true }, (err, db) => {
 });
 
 
+app.post('/msg',async(req,res)=>{
+	try{
+			const savemsg= new message({
+				name:req.body.name,
+				time:req.body.time,
+				identity:req.body.id,
+				text:req.body.text
+			})
+
+
+			const sent = await savemsg.save();
+
+			res.redirect("/login");
+
+
+	}catch(error){
+      res.status(404).send("error occured while sending the message");
+  }
+});
+
+
+app.get('/inbox',async(req,res)=>{
+	try{
+
+		const getmsg = await message.find();
+		res.render('inbox',{
+			msg:getmsg
+		}); 
+
+	}catch(error){
+      res.status(404).send("error");
+  }
+});
 
 
 

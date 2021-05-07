@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <title>Admin's inbox</title>
+  <link rel="stylesheet" type="text/css" href="css/btn.css">
+  <style type="text/css">
+  	#card {
+    		background-color: azure;
+    		border-radius: 10px;
+  			box-shadow: 0 10px 20px 0 rgba(0,0,0,0.6);
+  			transition: 0.3s;
+  			width: 400px;
+  			padding: 5px;
+  			font-size: 20px;
+  			margin: 5%;
+		}
+
+		#card:hover {
+  			box-shadow: 0 16px 32px 0 rgba(0,0,0,0.4);
+		}
+		.ser{
+        width: 100%;
+        margin: 3%;
+      }
+      .ser input{
+        width: 30%;
+        font-family: serif;
+        font-size: 20px;
+        padding: 5px;
+        border:3px solid black;
+        border-radius: 10px;
+      }
+  </style>
+</head>
+<body>
+	<nav align='right'>
+    <h3 style="margin-right: 2%; "><a href="/" class="button"><span>Home</span></a><a href="/admin" class="button"><span>Back</span></a></h3>
+  </nav><br><br>
+  <div class="ser">
+
+<input type="text" id="filter" placeholder="Search Messages here..."></div><br><br>
+	<div align="center">
+		{{#each msg}}
+		<div id="card">
+			<span style="font-weight: bold;">Student Name: <span style="color: red">{{name}}</span></span><br><br>
+		
+			<span style="font-weight: bold;">Unique-Id: <span style="color: red">{{identity}}</span></span><br><br>
+			<span style="font-weight: bold;color: blue;top: 9px;">Message:</span><p style="width: 90%;height: 100px; border:1px solid black; background-color: white">{{text}}</p><br><br>
+			<span style=" margin-left: 180px; margin-bottom: 6px; font-size: 15px; color: green;"> <span style="color: black">Recieved:</span>  {{time}}</span><br>
+		</div>
+
+
+
+
+
+
+		{{/each}}
+
+	</div>
+<script type="text/javascript">
+	$(document).ready(function(){
+
+$("#filter").keyup(function() {
+    var value = $(this).val().toLowerCase();
+    $("#card").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+
+
+  });
+
+
+});
+</script>
+</body>
+</html>
