@@ -234,7 +234,7 @@ app.post("/update/:id" ,async(req,res)=>{
 	 		address:req.body.add
 	 		});
 
-		res.redirect('/disp');
+		res.redirect('/allstds');
    } catch(error){
       res.status(404).send("error");
     }
