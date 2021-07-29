@@ -51,7 +51,6 @@ app.set("view engine","hbs");
 
 app.use(express.static(path.join(__dirname,"/public")));
 app.use(express.static(path.join(__dirname,"/uploads")));
-app.use(express.static(path.join(__dirname, '/docs')));
 
 
 app.get("/",(req,res)=>{
@@ -389,7 +388,7 @@ app.get('/downloadTC/:id',async(req,res)=>{
             myDoc.end();
        
 
-            setTimeout(function(){const data=fs.readFileSync('./'+name+'.pdf',{root:'/docs'})
+            setTimeout(function(){const data=fs.readFileSync('./'+name+'.pdf',{root:'/public'})
             res.contentType('application/pdf')
             res.send(data)
             },port)
@@ -601,6 +600,25 @@ app.get('/inbox',async(req,res)=>{
 	}catch(error){
       res.status(404).send("error");
   }
+});
+
+app.get('/payment/:id',async(req,res)=>{
+	try{
+	const id= req.params.id;
+	const data= await register.findOne({_id:id});
+	res.status(201).render('payment',{
+    		
+    			fname:data.firstName,
+    			lname:data.lastName,
+    			phone:data.mobileNumber,
+    			age:data.age,
+    			email:data.emailAddress,
+
+    		});
+
+	 }catch(error){
+      res.status(404).send("error");
+    }
 });
 
 
